@@ -9,14 +9,14 @@ import { Observable } from 'rxjs/Observable';
   and Angular DI.
 */
 @Injectable()
-export class DataProvider implements HttpInterceptor {
+export class DataInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     const clonedRequest = req.clone({
       setHeaders: {
         'user-key': 'f4522aace96edbfbde4c97252e398c41',
-        'content-type': 'application/json'
+        'Accept': 'application/json'
       }
     });
 
