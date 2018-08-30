@@ -1,5 +1,7 @@
 {
   "name": "upcoming-games",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }
