@@ -33,7 +33,7 @@ export class HomePage {
     loader.present().then( () => {
       this._storage.get('genre').then((val) => {
 
-        if (val.id) {
+        if (val && val.id) {
           this.genre = val.id;
           this.genreName = val.name;
         } else {
@@ -49,7 +49,7 @@ export class HomePage {
           console.log(this.games);
         });
 
-        this._storage.get('favorites').then(() => {
+        this._storage.get('favorites').then((val) => {
           if (!val) {
             this._storage.set('favorites', this.favorites);
           }else {
