@@ -10,8 +10,18 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class DataProvider {
 
+  limit: number = 50;
+
   constructor(public http: HttpClient) {
     console.log('Hello DataProvider Provider');
   }
 
+
+  getGames(genre, offset_num) {
+
+    let genre_id = genre;
+    let offset = offset_num;
+
+    return this.http.get('https://api-endpoint.igdb.com/games/?fields=name,release_dates,screenshots&limit='+this.limit+'offset='+offset+'&order=release_dates.date:desc&filter[genres][eq]='+genre_id+'&filter[screenshots][exists]');
+  }
 }
