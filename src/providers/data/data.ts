@@ -19,6 +19,6 @@ export class DataProvider {
 
   getGames(genre, offset_num) {
 
-    return this.http.get(`https://api-endpoint.igdb.com/games/?fields=name,release_dates,screenshots&limit=${this.limit}&offset=${offset_num}&order=release_dates.date:desc&filter[genres][eq]=${genre}&filter[screenshots][exists]`);
+    return this.http.get(`/games/?fields=name,release_dates,screenshots&limit=${this.limit}&offset=${offset_num}&order=release_dates.date:desc&filter[genres][eq]=${genre}&filter[screenshots][exists]`);
   }
 }
