@@ -32,4 +32,10 @@ export class DataProvider {
   getGenres() {
     return this.http.get(`${this.baseUrl}/genres/?fields=*`);
   }
+
+  searchGames(kw) {
+    let keyWord = kw;
+    return this.http.get(`${this.baseUrl}/games/?fields=name,release_dates,screenshots&limit=50&offset=0&order=release_dates.date:desc&search=${keyWord}`);
+
+  }
 }
