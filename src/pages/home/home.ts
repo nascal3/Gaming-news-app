@@ -64,8 +64,7 @@ export class HomePage {
 
 
   ionViewDidLoad() {
-
-
+    console.log('Home page loaded');
   }
 
 }
