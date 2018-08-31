@@ -62,6 +62,34 @@ export class HomePage {
     })
   }
 
+  favorite(game) {
+    this.favorites.push(game);
+    this.favorites = this.favorites.filter((item, i ,ar)=> {
+      return ar.indexOf(item) === i;
+    });
+    this._storage.set('favorites', this.favorites);
+    console.log(this.favorites);
+  }
+
+  removeFavorites(game) {
+    this.favorites = this.favorites.filter((item) => {
+      return item !== game;
+    });
+    this._storage.set('favorites', this.favorites);
+  }
+
+  openFavorites() {
+    this._storage.get('favorites').then((val) => {
+      this.genreName = 'Favorites';
+
+      if (val.length !=0 ) {
+        this._data.getFavorites(val)
+          .subscribe(res => this.games = res);
+      }else {
+          this.games.length = 0;
+      }
+    });
+  }
 
   ionViewDidLoad() {
     console.log('Home page loaded');
