@@ -11,6 +11,7 @@ import { DataInterceptor } from '../providers/data/dataInterceptor';
 import { DataProvider } from '../providers/data/data';
 import { IonicStorageModule } from "@ionic/storage";
 import { GenresPage } from "../pages/genres/genres";
+import { Keyboard } from "@ionic-native/keyboard";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { GenresPage } from "../pages/genres/genres";
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     {provide: HTTP_INTERCEPTORS, useClass: DataInterceptor, multi: true},
-    DataProvider
+    DataProvider,
+    Keyboard
   ]
 })
 export class AppModule {}
