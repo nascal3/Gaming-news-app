@@ -3,11 +3,5 @@
   "integrations": {
     "cordova": {}
   },
-  "type": "ionic-angular",
-  "proxies": [
-    {
-      "path":"/games",
-      "proxyUrl": "https://api-endpoint.igdb.com/games"
-    }
-  ]
+  "type": "ionic-angular"
 }
