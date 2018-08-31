@@ -20,19 +20,23 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="card-background-page">  
+<ion-content class="card-background-page">
+
+  <ion-searchbar (search)="search($event.target.value)" [ngClass]="{'show-search': showSearch}"></ion-searchbar>
+
   <div *ngIf="games">
     <ion-card *ngFor="let game of games">
-      <div *ngIf="game.screenshots; else noImage"></div>
-      <div class="game-image">
-        <img src="https://images.igdb.com/igdb/image/upload/t_screenshot_med/{{game.screenshots[0].cloudinary_id}}.jpg" class="tinted">
+      <div *ngIf="game.screenshots">
+        <div class="game-image">
+          <img src="https://images.igdb.com/igdb/image/upload/t_screenshot_med/{{game.screenshots[0].cloudinary_id}}.jpg" class="tinted">
+        </div>
       </div>
 
-      <ng-template #noImage>
+      <div *ngIf="!game.screenshots">
         <div class="game-image">
-          <img src="../../assets/noImage.jpg" >
+          <img src="../../assets/imgs/noImage.jpg" >
         </div>
-      </ng-template>
+      </div>
 
       <div *ngIf="favorites.indexOf(game.id) == '-1'; then fav else remove"></div>
       <ng-template #fav>
