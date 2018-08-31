@@ -19,7 +19,7 @@ import {GenresPage} from "../genres/genres";
 export class HomePage {
 
   games: any = [];
-  genre: any = 5;
+  genre: any;
   genreName: string = "Upcoming Games";
   favorites: any = [];
 
@@ -59,7 +59,9 @@ export class HomePage {
           }
         });
 
-        loader.dismiss();
+        setTimeout(() => {
+          loader.dismiss();
+        }, 2000)
       });
     })
   }
@@ -112,7 +114,10 @@ export class HomePage {
           });
         });
       }
-      loader.dismiss();
+
+      setTimeout(() => {
+        loader.dismiss();
+      }, 2000)
 
     });
 
