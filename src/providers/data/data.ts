@@ -18,7 +18,13 @@ export class DataProvider {
 
 
   getGames(genre, offset_num) {
-
     return this.http.get(`/games/?fields=name,release_dates,screenshots&limit=${this.limit}&offset=${offset_num}&order=release_dates.date:desc&filter[genres][eq]=${genre}&filter[screenshots][exists]`);
+  }
+
+  getFavorites (favs) {
+    let favorites = favs;
+    favorites = favorites.join();
+    return this.http.get(`/games/${favorites}?fields=name,release_dates,screenshots&order=release_dates.date:desc&filter[screenshots][exists]`);
+
   }
 }
