@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Storage } from "@ionic/storage";
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import {DataProvider} from "../../providers/data/data";
 
 /**
  * Generated class for the GenresPage page.
@@ -15,10 +17,36 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class GenresPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  genres: any = [];
+  currentGenre: any;
+
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              private storage: Storage,
+              public viewCtrl: ViewController,
+              private _data: DataProvider) {
+    this._data.getGenres().subscribe((res) => {
+      this.genres = res;
+    })
+
   }
 
-  ionViewDidLoad() {
+  ionViewDidEnter() {
+    this.storage.get('genre').then((val) => {
+      if (val && val.id) {
+        this.currentGenre = val.id;
+      } else {
+        this.currentGenre = 5;
+      }
+    });
+  }
+
+  genreSelected(genre) {
+    this.storage.set('genre', genre);
+    this.viewCtrl.dismiss(genre);
+  }
+
+  ionViewDidLoad(){
     console.log('ionViewDidLoad GenresPage');
   }
 
