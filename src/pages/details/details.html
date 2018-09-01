@@ -58,12 +58,14 @@
       </ion-scroll>
     </div>
 
-    <h5>Videos &amp; Trailers</h5>
-    <ion-list>
-      <button ion-item *ngFor="let video of game.videos" (click)="playVideo(video.video_id)">
-        <ion-icon name="play" small item-start color="primary" class="itemfix"></ion-icon>
-        {{video.name}}
-      </button>
-    </ion-list>
+    <div *ngIf="game.videos?.length > 0">
+      <h5>Videos &amp; Trailers</h5>
+      <ion-list>
+        <button ion-item *ngFor="let video of game.videos" (click)="playVideo(video.video_id)">
+          <ion-icon name="play" small item-start color="primary" class="itemfix"></ion-icon>
+          {{video.name}}
+        </button>
+      </ion-list>
+    </div>
   </div>
 </ion-content>
