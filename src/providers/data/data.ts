@@ -36,6 +36,13 @@ export class DataProvider {
   searchGames(kw) {
     let keyWord = kw;
     return this.http.get(`${this.baseUrl}/games/?fields=name,release_dates,screenshots&limit=50&offset=0&order=release_dates.date:desc&search=${keyWord}`);
+  }
 
+  getGame(game) {
+    return this.http.get(`${this.baseUrl}/games/${game}?fields=*`);
+  }
+
+  getPerspective(perspective) {
+    return this.http.get(`${this.baseUrl}/player_perspectives/${perspective}?fields=*`);
   }
 }
