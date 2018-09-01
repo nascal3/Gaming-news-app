@@ -29,9 +29,8 @@ export class DetailsPage {
 
   ionViewDidLoad() {
     this._data.getGame(this.game_id).subscribe((res) => {
-      let data = res;
 
-      if ( data[0].player_perspectives && data[0].player_perspectives.length > 0 ) {
+      if ( res[0].player_perspectives && res[0].player_perspectives.length > 0 ) {
         let pers = res[0].player_perspectives[0];
 
         this._data.getPerspective(pers).subscribe((res) => {
