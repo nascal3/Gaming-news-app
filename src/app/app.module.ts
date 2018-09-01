@@ -12,12 +12,14 @@ import { DataProvider } from '../providers/data/data';
 import { IonicStorageModule } from "@ionic/storage";
 import { GenresPage } from "../pages/genres/genres";
 import { Keyboard } from "@ionic-native/keyboard";
+import {DetailsPage} from "../pages/details/details";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    GenresPage
+    GenresPage,
+    DetailsPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import { Keyboard } from "@ionic-native/keyboard";
   entryComponents: [
     MyApp,
     HomePage,
-    GenresPage
+    GenresPage,
+    DetailsPage
   ],
   providers: [
     StatusBar,
