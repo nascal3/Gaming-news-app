@@ -19,30 +19,30 @@ export class DataProvider {
 
 
   getGames(genre, offset_num) {
-    return this.http.get(`${this.baseUrl}/games/?fields=name,release_dates,screenshots&limit=${this.limit}&offset=${offset_num}&order=release_dates.date:desc&filter[genres][eq]=${genre}&filter[screenshots][exists]`);
+    return this.http.get(`/games/?fields=name,release_dates,screenshots&limit=${this.limit}&offset=${offset_num}&order=release_dates.date:desc&filter[genres][eq]=${genre}&filter[screenshots][exists]`);
   }
 
   getFavorites (favs) {
     let favorites = favs;
     favorites = favorites.join();
-    return this.http.get(`${this.baseUrl}/games/${favorites}?fields=name,release_dates,screenshots&order=release_dates.date:desc&filter[screenshots][exists]`);
+    return this.http.get(`/games/${favorites}?fields=name,release_dates,screenshots&order=release_dates.date:desc&filter[screenshots][exists]`);
 
   }
 
   getGenres() {
-    return this.http.get(`${this.baseUrl}/genres/?fields=*`);
+    return this.http.get(`/genres/?fields=*`);
   }
 
   searchGames(kw) {
     let keyWord = kw;
-    return this.http.get(`${this.baseUrl}/games/?fields=name,release_dates,screenshots&limit=50&offset=0&order=release_dates.date:desc&search=${keyWord}`);
+    return this.http.get(`/games/?fields=name,release_dates,screenshots&limit=50&offset=0&order=release_dates.date:desc&search=${keyWord}`);
   }
 
   getGame(game) {
-    return this.http.get(`${this.baseUrl}/games/${game}?fields=*`);
+    return this.http.get(`/games/${game}?fields=*`);
   }
 
   getPerspective(perspective) {
-    return this.http.get(`${this.baseUrl}/player_perspectives/${perspective}?fields=*`);
+    return this.http.get(`/player_perspectives/${perspective}?fields=*`);
   }
 }
