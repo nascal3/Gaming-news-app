@@ -25,7 +25,7 @@
   <ion-searchbar (search)="search($event.target.value)" [ngClass]="{'show-search': showSearch}"></ion-searchbar>
 
   <div *ngIf="games">
-    <ion-card *ngFor="let game of games">
+    <ion-card *ngFor="let game of games" [@fadeOut]>
       <div *ngIf="game.screenshots">
         <div class="game-image">
           <img src="https://images.igdb.com/igdb/image/upload/t_screenshot_med/{{game.screenshots[0].cloudinary_id}}.jpg" class="tinted">
