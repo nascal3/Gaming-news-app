@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {DataProvider} from "../../providers/data/data";
+import { InAppBrowser } from "@ionic-native/in-app-browser";
+import { YoutubeVideoPlayer } from "@ionic-native/youtube-video-player";
 
 
 /**
@@ -23,7 +25,10 @@ export class DetailsPage {
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              private _data: DataProvider) {
+              private _data: DataProvider,
+              private iab: InAppBrowser,
+              private youtube: YoutubeVideoPlayer
+              ) {
     this.game_id = navParams.get('game');
   }
 
@@ -42,6 +47,15 @@ export class DetailsPage {
 
       this.game = res[0];
     })
+  }
+
+  launchSite(url) {
+    const browser = this.iab.create(url, '_system');
+    browser.close();
+  }
+
+  playVideo(video_id) {
+    this.youtube.openVideo(video_id);
   }
 
 }
