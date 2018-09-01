@@ -1,21 +1,15 @@
 import { Component } from '@angular/core';
+import {trigger, state, style, transition, animate, keyframes, query,stagger } from '@angular/animations';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {DataProvider} from "../../providers/data/data";
 import { InAppBrowser } from "@ionic-native/in-app-browser";
 import { YoutubeVideoPlayer } from "@ionic-native/youtube-video-player";
 
 
-/**
- * Generated class for the DetailsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-details',
-  templateUrl: 'details.html',
+  templateUrl: 'details.html'
 })
 export class DetailsPage {
 

@@ -79,3 +79,22 @@ h5 {
 .item-inner {
   margin-left: 5px !important;
 }
+
+.fadeInAnim {
+  animation: fadeIn 1s ease-in forwards;
+}
+
+.fadeUpAnim {
+  animation: fadeUp 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0; transform: translateY(-70px);}
+  50% {opacity: 1; transform: translateY(25px);}
+  100% {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeUp {
+  0% {opacity: 0; transform: translateY(70px);}
+  100% {opacity: 1; transform: translateY(0);}
+}

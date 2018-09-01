@@ -17,7 +17,7 @@
       <img *ngIf="!game.screenshots" src="../../assets/imgs/noImage.jpg" class="tinted">
     </div>
 
-    <div id="popover">
+    <div id="popover" class="fadeInAnim">
     <ion-grid>
       <ion-row>
         <ion-col col-6>
@@ -42,7 +42,7 @@
     </ion-grid>
   </div>
 
-    <ion-card padding>
+    <ion-card padding class="fadeUpAnim">
       <h4>Game Summary</h4>
       <p>{{ game.summary }}</p>
     </ion-card>
