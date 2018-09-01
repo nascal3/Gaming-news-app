@@ -15,6 +15,7 @@ import { Keyboard } from "@ionic-native/keyboard";
 import {DetailsPage} from "../pages/details/details";
 import { InAppBrowser } from "@ionic-native/in-app-browser";
 import { YoutubeVideoPlayer } from "@ionic-native/youtube-video-player";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { YoutubeVideoPlayer } from "@ionic-native/youtube-video-player";
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    BrowserAnimationsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
