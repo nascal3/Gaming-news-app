@@ -53,7 +53,7 @@ export class HomePage {
 
           let jsonData: string = JSON.stringify(res);
           this.games = JSON.parse(jsonData);
-          console.log(this.games);
+          // console.log(this.games);
         });
 
         this._storage.get('favorites').then((val) => {
