@@ -13,6 +13,7 @@ import { IonicStorageModule } from "@ionic/storage";
 import { GenresPage } from "../pages/genres/genres";
 import { Keyboard } from "@ionic-native/keyboard";
 import {DetailsPage} from "../pages/details/details";
+import { InAppBrowser } from "@ionic-native/in-app-browser";
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {DetailsPage} from "../pages/details/details";
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     {provide: HTTP_INTERCEPTORS, useClass: DataInterceptor, multi: true},
     DataProvider,
-    Keyboard
+    Keyboard,
+    InAppBrowser
   ]
 })
 export class AppModule {}
