@@ -14,6 +14,7 @@ import { GenresPage } from "../pages/genres/genres";
 import { Keyboard } from "@ionic-native/keyboard";
 import {DetailsPage} from "../pages/details/details";
 import { InAppBrowser } from "@ionic-native/in-app-browser";
+import { YoutubeVideoPlayer } from "@ionic-native/youtube-video-player";
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { InAppBrowser } from "@ionic-native/in-app-browser";
     {provide: HTTP_INTERCEPTORS, useClass: DataInterceptor, multi: true},
     DataProvider,
     Keyboard,
-    InAppBrowser
+    InAppBrowser,
+    YoutubeVideoPlayer
   ]
 })
 export class AppModule {}
