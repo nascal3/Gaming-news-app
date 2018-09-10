@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {trigger, state, style, transition, animate, keyframes, query,stagger } from '@angular/animations';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {DataProvider} from "../../providers/data/data";
 import { InAppBrowser } from "@ionic-native/in-app-browser";
