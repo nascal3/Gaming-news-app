@@ -84,7 +84,7 @@ export class HomePage {
 
         setTimeout(() => {
           loader.dismiss();
-        }, 2000)
+        }, 3000)
       });
     })
   }
@@ -140,7 +140,7 @@ export class HomePage {
 
       setTimeout(() => {
         loader.dismiss();
-      }, 2000)
+      }, 3000)
 
     });
 
