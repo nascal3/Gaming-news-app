@@ -3,9 +3,5 @@
   "integrations": {
     "cordova": {}
   },
-  "type": "ionic-angular",
-  "proxies": [{
-    "path": "/",
-    "proxyUrl": "https://api-endpoint.igdb.com"
-  }]
+  "type": "ionic-angular"
 }
