@@ -26,13 +26,13 @@
 
   <div *ngIf="games">
     <ion-card *ngFor="let game of games" [@fadeOut]>
-      <div *ngIf="game.screenshots">
+      <div *ngIf="game.screenshots" (click)="detailsPage(game.id)">
         <div class="game-image">
           <img src="https://images.igdb.com/igdb/image/upload/t_screenshot_med/{{game.screenshots[0].cloudinary_id}}.jpg" class="tinted">
         </div>
       </div>
 
-      <div *ngIf="!game.screenshots">
+      <div *ngIf="!game.screenshots" (click)="detailsPage(game.id)">
         <div class="game-image">
           <img src="../../assets/imgs/noImage.jpg" >
         </div>
